@@ -1,0 +1,24 @@
+/* paste below code in mysql command line or php my admin */
+CREATE DATABASE IF NOT EXISTS user_notes_app;
+
+USE user_notes_app;
+
+-- Table for user data
+CREATE TABLE IF NOT EXISTS users (
+    id INT NOT NULL AUTO_INCREMENT,
+    username VARCHAR(15) NOT NULL UNIQUE,
+    password VARCHAR(256) NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);
+
+-- Table for notes with user association
+CREATE TABLE IF NOT EXISTS notes (
+    note_id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (note_id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);

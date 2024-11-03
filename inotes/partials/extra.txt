@@ -1,0 +1,10 @@
+/* resources used */
+
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
+https://datatables.net/
+
+https://releases.jquery.com/
+
+https://www.youtube.com/playlist?list=PLu0W_9lII9aikXkRE0WxDt1vozo3hnmtR
+
